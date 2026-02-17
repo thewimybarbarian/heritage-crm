@@ -97,7 +97,7 @@ export async function submitLead(data: LeadData) {
               <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid #0070c7;">
                 <p style="margin: 0; color: #333;">
                   <strong>View in CRM:</strong>
-                  <a href="${CRM_API_URL}/leads/${crmResult.id}" style="color: #0070c7; text-decoration: none;">
+                  <a href="https://heritage-crm.vercel.app/dashboard" style="color: #0070c7; text-decoration: none;">
                     Click here
                   </a>
                 </p>

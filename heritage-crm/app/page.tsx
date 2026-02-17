@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { createClient } from '../lib/supabase/client'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { Logo } from '../components/Logo'
 
 export default function LoginPage() {
@@ -14,7 +13,7 @@ export default function LoginPage() {
     const router = useRouter()
     const supabase = createClient()
 
-    const handleLogin = async (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setLoading(true)
         setError(null)
@@ -107,15 +106,7 @@ export default function LoginPage() {
                     </div>
                 </form>
 
-                <div className="mt-6">
-                    <button
-                        type="button"
-                        onClick={() => router.push('/dashboard')}
-                        className="flex w-full justify-center rounded-xl bg-stone-200 px-3 py-1.5 text-sm font-semibold leading-6 text-sage-700 shadow-sm hover:bg-stone-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 transition-colors"
-                    >
-                        Developer Bypass
-                    </button>
-                </div>
+
             </div>
         </div>
     )
