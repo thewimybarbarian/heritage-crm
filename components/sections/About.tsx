@@ -8,17 +8,15 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image side */}
           <div className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Placeholder for Alan's image */}
-              <div className="w-full h-full bg-gradient-to-br from-forest-100 to-forest-200 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-32 h-32 rounded-full bg-forest-300 mx-auto flex items-center justify-center">
-                    <Heart size={48} className="text-forest-600" />
-                  </div>
-                  <div className="text-forest-600 font-semibold">Alan Norton</div>
-                  <div className="text-forest-500 text-sm">Your video will go here</div>
-                </div>
-              </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-stone-200">
+              <Image
+                src="/images/alan-norton.jpg"
+                alt="Alan Norton - Heritage Home Solutions"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gold-100 rounded-2xl -z-10" />
