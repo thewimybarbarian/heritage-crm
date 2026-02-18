@@ -10,5 +10,6 @@ export async function updateLeadNotes(leadId: string, notes: string) {
         .update({ notes })
         .eq('id', leadId)
 
+    revalidatePath('/dashboard/leads')
     revalidatePath('/dashboard')
 }

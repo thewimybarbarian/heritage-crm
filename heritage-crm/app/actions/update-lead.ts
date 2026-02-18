@@ -15,5 +15,6 @@ export async function updateLeadStatus(leadId: string, currentStatus: string) {
         .update({ status: nextStatus })
         .eq('id', leadId)
 
+    revalidatePath('/dashboard/leads')
     revalidatePath('/dashboard')
 }
