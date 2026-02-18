@@ -5,6 +5,7 @@ import { Logo } from '../../components/Logo'
 import LogoutButton from './LogoutButton'
 import StatusBadge from './StatusBadge'
 import FilterTabs from './FilterTabs'
+import NotesField from './NotesField'
 import { Phone, Mail, MessageSquare } from 'lucide-react'
 import { Suspense } from 'react'
 
@@ -20,6 +21,7 @@ type Lead = {
     status: string
     priority: string
     source: string
+    notes: string | null
 }
 
 export default async function DashboardPage({
@@ -98,6 +100,7 @@ export default async function DashboardPage({
                                         <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Name</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Situation</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Status</th>
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Notes</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Actions</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">Date</th>
                                     </tr>
@@ -121,6 +124,9 @@ export default async function DashboardPage({
                                             <td className="px-6 py-4">
                                                 <StatusBadge leadId={lead.id} currentStatus={lead.status} />
                                                 <div className="text-xs text-stone-400 mt-1">click to advance</div>
+                                            </td>
+                                            <td className="px-6 py-4 max-w-[180px]">
+                                                <NotesField leadId={lead.id} initialNotes={lead.notes} />
                                             </td>
                                             <td className="px-6 py-4">
                                                 <div className="flex items-center gap-2">

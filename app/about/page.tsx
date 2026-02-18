@@ -1,3 +1,15 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'About Us | Heritage Home Solutions',
+    description: 'Founded on faith and integrity, Heritage Home Solutions helps Oklahoma City families navigate senior housing transitions, probate sales, and foreclosure with compassion.',
+    openGraph: {
+        title: 'About Heritage Home Solutions',
+        description: 'Faith-driven real estate solutions for Oklahoma City families. Learn about our story, values, and how we serve our community.',
+        url: 'https://heritagehomesolutions.com/about',
+    },
+}
+
 import { About } from '@/components/sections/About'
 import { Services } from '@/components/sections/Services'
 import { Process } from '@/components/sections/Process'

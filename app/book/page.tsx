@@ -1,3 +1,15 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Book a Free Consultation | Heritage Home Solutions',
+    description: 'Schedule your free, no-obligation consultation with Heritage Home Solutions. We help Oklahoma City homeowners navigate senior transitions, probate, and distressed sales.',
+    openGraph: {
+        title: 'Book a Free Consultation | Heritage Home Solutions',
+        description: 'No pressure, no obligation. Schedule a free consultation with Heritage Home Solutions today.',
+        url: 'https://heritagehomesolutions.com/book',
+    },
+}
+
 import { Contact } from '@/components/sections/Contact'
 import { Phone, Mail, Clock } from 'lucide-react'
 
