@@ -1,4 +1,5 @@
 import { createClient } from '../../lib/supabase/server'
+import { createAdminClient } from '../../lib/supabase/admin'
 import { redirect } from 'next/navigation'
 import { Logo } from '../../components/Logo'
 import LogoutButton from './LogoutButton'
@@ -30,7 +31,8 @@ export default async function DashboardPage() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) redirect('/')
 
-    const { data: leads } = await supabase
+    const admin = createAdminClient()
+    const { data: leads } = await admin
         .from('leads')
         .select('*')
         .order('created_at', { ascending: false })
