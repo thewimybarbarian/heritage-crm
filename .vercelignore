@@ -32,6 +32,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# legacy
-heritage-crm/node_modules
-heritage-crm/.next
+# legacy CRM subfolder — exclude from build
+heritage-crm
+heritage-crm/**
+
