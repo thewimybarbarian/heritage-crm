@@ -1,5 +1,6 @@
 import { Hero } from '@/components/sections/Hero'
 import { Testimonials } from '@/components/sections/Testimonials'
+import { VideoStories } from '@/components/sections/VideoStories'
 import Link from 'next/link'
 import { ArrowRight, ShieldCheck, HeartHandshake, Clock, MessageCircle, MapPin } from 'lucide-react'
 
@@ -74,7 +75,6 @@ export default function Home() {
               </Link>
             </div>
             <div className="bg-white p-2 rounded-2xl shadow-xl rotate-1 transform hover:rotate-0 transition-transform duration-500">
-              {/* Placeholder for a map or team image */}
               <div className="h-80 rounded-xl overflow-hidden bg-stone-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207963.82959891827!2d-97.66981881515915!3d35.47291883658252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2173bb4218d61%3A0x1d4ee095a004655!2sOklahoma%20City%2C%20OK!5e0!3m2!1sen!2sus!4v1708465000000!5m2!1sen!2sus"
@@ -92,6 +92,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <VideoStories />
 
       <Testimonials />
 
