@@ -32,7 +32,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# legacy CRM subfolder — exclude from build
-heritage-crm
-heritage-crm/**
 
