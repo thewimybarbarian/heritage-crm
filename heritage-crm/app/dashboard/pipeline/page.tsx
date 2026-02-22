@@ -10,7 +10,7 @@ export default async function PipelinePage() {
 
     return (
         <div className="p-8 h-full flex flex-col">
-            <h1 className="text-2xl font-bold font-serif text-stone-900 mb-6">Pipeline</h1>
+            <h1 className="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 mb-6">Pipeline</h1>
             <KanbanBoard initialLeads={leads ?? []} />
         </div>
     )

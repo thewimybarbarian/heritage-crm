@@ -54,7 +54,7 @@ export default function KanbanBoard({ initialLeads }: { initialLeads: Lead[] }) 
                             {/* Column header */}
                             <div className="flex items-center gap-2 mb-3">
                                 <div className={`w-2.5 h-2.5 rounded-full ${col.header}`} />
-                                <span className="font-medium text-stone-700 text-sm">{col.label}</span>
+                                <span className="font-medium text-stone-700 dark:text-stone-300 text-sm">{col.label}</span>
                                 <span className={`ml-auto text-xs font-semibold px-2 py-0.5 rounded-full ${col.badge}`}>
                                     {colLeads.length}
                                 </span>
@@ -68,8 +68,8 @@ export default function KanbanBoard({ initialLeads }: { initialLeads: Lead[] }) 
                                         {...provided.droppableProps}
                                         className={`flex-1 rounded-2xl p-2 min-h-[200px] transition-colors ${
                                             snapshot.isDraggingOver
-                                                ? 'bg-stone-200'
-                                                : 'bg-stone-100/60'
+                                                ? 'bg-stone-200 dark:bg-stone-700'
+                                                : 'bg-stone-100/60 dark:bg-stone-800/40'
                                         }`}
                                     >
                                         <div className="space-y-2">
@@ -80,28 +80,28 @@ export default function KanbanBoard({ initialLeads }: { initialLeads: Lead[] }) 
                                                             ref={provided.innerRef}
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
-                                                            className={`bg-white rounded-xl border border-stone-100 p-3.5 shadow-sm transition-shadow ${
+                                                            className={`bg-white dark:bg-stone-900 rounded-xl border border-stone-100 dark:border-stone-700 p-3.5 shadow-sm transition-shadow ${
                                                                 snapshot.isDragging
-                                                                    ? 'shadow-lg rotate-1 border-stone-200'
+                                                                    ? 'shadow-lg rotate-1 border-stone-200 dark:border-stone-600'
                                                                     : 'hover:shadow-md'
                                                             }`}
                                                         >
-                                                            <div className="font-medium text-stone-900 text-sm leading-tight">
+                                                            <div className="font-medium text-stone-900 dark:text-stone-100 text-sm leading-tight">
                                                                 {lead.name}
                                                             </div>
-                                                            <div className="text-xs text-stone-500 mt-1 leading-snug">
+                                                            <div className="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-snug">
                                                                 {lead.situation}
                                                             </div>
                                                             <div className="flex items-center justify-between mt-3">
                                                                 <a
                                                                     href={`tel:${lead.phone}`}
                                                                     onClick={e => e.stopPropagation()}
-                                                                    className="inline-flex items-center gap-1.5 text-xs text-stone-500 hover:text-green-700 transition-colors"
+                                                                    className="inline-flex items-center gap-1.5 text-xs text-stone-500 dark:text-stone-400 hover:text-green-700 dark:hover:text-green-400 transition-colors"
                                                                 >
                                                                     <Phone size={11} />
                                                                     {lead.phone}
                                                                 </a>
-                                                                <span className="text-xs text-stone-300">
+                                                                <span className="text-xs text-stone-300 dark:text-stone-600">
                                                                     {new Date(lead.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                                                                 </span>
                                                             </div>

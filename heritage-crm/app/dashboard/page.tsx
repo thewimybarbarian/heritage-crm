@@ -39,7 +39,7 @@ export default async function DashboardPage() {
 
     return (
         <div className="p-8">
-            <h1 className="text-2xl font-bold font-serif text-stone-900 mb-8">Dashboard</h1>
+            <h1 className="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 mb-8">Dashboard</h1>
 
             {/* Stat cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -66,12 +66,12 @@ function StatCard({ label, value, accent }: { label: string; value: number; acce
     }
 
     return (
-        <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-6 relative overflow-hidden">
+        <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-6 relative overflow-hidden transition-colors">
             {accent && (
                 <div className={`absolute top-0 left-0 right-0 h-1 ${bar[accent]}`} />
             )}
-            <p className="text-sm text-stone-500 mt-1">{label}</p>
-            <p className="text-4xl font-bold text-stone-900 mt-2">{value}</p>
+            <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">{label}</p>
+            <p className="text-4xl font-bold text-stone-900 dark:text-stone-100 mt-2">{value}</p>
         </div>
     )
 }

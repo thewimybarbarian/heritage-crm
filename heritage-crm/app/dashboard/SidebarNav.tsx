@@ -23,8 +23,8 @@ export default function SidebarNav() {
                         href={href}
                         className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                             active
-                                ? 'bg-stone-100 text-stone-900'
-                                : 'text-stone-500 hover:bg-stone-50 hover:text-stone-700'
+                                ? 'bg-stone-100 text-stone-900 dark:bg-stone-800 dark:text-stone-100'
+                                : 'text-stone-500 hover:bg-stone-50 hover:text-stone-700 dark:text-stone-400 dark:hover:bg-stone-800 dark:hover:text-stone-200'
                         }`}
                     >
                         <Icon size={15} />

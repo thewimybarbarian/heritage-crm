@@ -8,8 +8,8 @@ export default function LeadsBarChart({ data }: { data: DataPoint[] }) {
     const hasData = data.some(d => d.count > 0)
 
     return (
-        <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-6">
-            <h2 className="text-sm font-medium text-stone-500 mb-4">Leads — Last 30 Days</h2>
+        <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-6 transition-colors">
+            <h2 className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-4">Leads — Last 30 Days</h2>
             <div className="h-44">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} barCategoryGap="30%">

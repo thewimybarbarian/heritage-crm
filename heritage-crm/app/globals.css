@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --color-stone-50: #fffbf7;
     --color-stone-100: #fff0e0;
