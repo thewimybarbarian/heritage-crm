@@ -118,7 +118,7 @@ export function Hero() {
                   playsInline
                   className="w-full h-full object-cover scale-105"
                 >
-                  <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4" type="video/mp4" />
+                  <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4" type="video/mp4" />
                 </video>
 
                 {/* Inner shadow/overlay for better blending */}
