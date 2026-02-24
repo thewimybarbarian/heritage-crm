@@ -1,5 +1,8 @@
+'use client'
+
 import { CheckCircle2, Heart } from 'lucide-react'
 import Image from 'next/image'
+import { FadeIn } from '@/components/FadeIn'
 
 export function About() {
   return (
@@ -7,7 +10,7 @@ export function About() {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image side */}
-          <div className="relative">
+          <FadeIn direction="right" className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-stone-200">
               <Image
                 src="/images/alan-norton.jpg"
@@ -20,10 +23,10 @@ export function About() {
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gold-100 rounded-2xl -z-10" />
-          </div>
+          </FadeIn>
 
           {/* Content side */}
-          <div className="space-y-6">
+          <FadeIn direction="left" className="space-y-6">
             <div className="inline-block px-4 py-2 rounded-full bg-forest-50 text-forest-600 font-semibold text-sm">
               About Alan Norton
             </div>
@@ -32,7 +35,7 @@ export function About() {
               A <span className="text-gradient">Faith-Driven</span> Approach to Real Estate
             </h2>
 
-            <div className="prose prose-lg text-cream-600 space-y-4">
+            <div className="prose prose-lg text-cream-800 space-y-4">
               <p>
                 For over 15 years, I've been helping families navigate some of life's most challenging transitions. Whether you're a senior looking to downsize, a family dealing with an inherited property, or someone facing foreclosure, I understand that selling your home is about more than just a transaction—it's about your story, your memories, and your future.
               </p>
@@ -46,21 +49,21 @@ export function About() {
                 <CheckCircle2 className="text-forest-600 mt-1 flex-shrink-0" size={24} />
                 <div>
                   <div className="font-semibold text-cream-900 mb-1">15+ Years Experience</div>
-                  <div className="text-cream-600 text-sm">Helping Oklahoma City families for over a decade</div>
+                  <div className="text-cream-800 text-sm">Helping Oklahoma City families for over a decade</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="text-forest-600 mt-1 flex-shrink-0" size={24} />
                 <div>
                   <div className="font-semibold text-cream-900 mb-1">Faith-Based Values</div>
-                  <div className="text-cream-600 text-sm">Integrity and honesty in every interaction</div>
+                  <div className="text-cream-800 text-sm">Integrity and honesty in every interaction</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="text-forest-600 mt-1 flex-shrink-0" size={24} />
                 <div>
                   <div className="font-semibold text-cream-900 mb-1">Community Focused</div>
-                  <div className="text-cream-600 text-sm">Proudly serving the OKC metro area</div>
+                  <div className="text-cream-800 text-sm">Proudly serving the OKC metro area</div>
                 </div>
               </div>
             </div>
@@ -68,7 +71,7 @@ export function About() {
             <a href="#contact" className="btn btn-primary inline-flex">
               Let's Talk About Your Situation
             </a>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

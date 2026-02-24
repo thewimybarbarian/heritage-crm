@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Phone, Mail, MapPin, Loader2, CheckCircle2 } from 'lucide-react'
 import { submitLead } from '@/app/actions/submit-lead'
+import { FadeIn } from '@/components/FadeIn'
 
 const leadSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -61,21 +62,21 @@ export function Contact() {
     <section id="contact" className="section-padding bg-cream-50">
       <div className="container-custom">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <FadeIn className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-4 py-2 rounded-full bg-forest-50 text-forest-600 font-semibold text-sm mb-4">
             Get in Touch
           </div>
           <h2 className="text-display-md md:text-display-lg text-cream-900 mb-6">
             Start Your <span className="text-gradient">Journey Today</span>
           </h2>
-          <p className="text-xl text-cream-600">
+          <p className="text-xl text-cream-800">
             Fill out the form below or give us a call. We're here to help and will respond within 24 hours.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-8">
+          <FadeIn direction="right" className="lg:col-span-2 space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-cream-900 mb-6">
                 Contact Information
@@ -90,7 +91,7 @@ export function Contact() {
                     <a href="tel:+1234567890" className="text-forest-600 hover:text-forest-700 transition-colors">
                       (555) 123-4567
                     </a>
-                    <div className="text-sm text-cream-600 mt-1">Mon-Fri 8am-6pm</div>
+                    <div className="text-sm text-cream-800 mt-1">Mon-Fri 8am-6pm</div>
                   </div>
                 </div>
 
@@ -112,7 +113,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-cream-900 mb-1">Service Area</div>
-                    <div className="text-cream-600">
+                    <div className="text-cream-800">
                       Oklahoma City Metro<br />
                       30-mile radius
                     </div>
@@ -143,10 +144,11 @@ export function Contact() {
                 </li>
               </ul>
             </div>
-          </div>
+
+          </FadeIn>
 
           {/* Contact form */}
-          <div className="lg:col-span-3">
+          <FadeIn direction="left" delay={0.2} className="lg:col-span-3">
             <form onSubmit={handleSubmit(onSubmit)} className="card p-8 space-y-6">
               {/* Success message */}
               {isSuccess && (
@@ -263,11 +265,11 @@ export function Contact() {
                 )}
               </button>
 
-              <p className="text-xs text-cream-500 text-center">
+              <p className="text-xs text-cream-700 text-center">
                 By submitting this form, you agree to be contacted about your inquiry. We respect your privacy and will never share your information.
               </p>
             </form>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

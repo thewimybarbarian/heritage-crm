@@ -13,6 +13,7 @@
     "@bsmnt/scrollytelling": "^0.3.3",
     "@hookform/resolvers": "^3.9.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.34.1",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
     "lucide-react": "^0.460.0",

@@ -2,12 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { Logo } from '@/components/Logo'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Only transparent on home page when not scrolled
+  const isTransparent = pathname === '/' && !isScrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +30,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${!isTransparent
         ? 'bg-stone-50/95 backdrop-blur-md shadow-lg border-b border-stone-200'
         : 'bg-transparent text-white'
         }`}
@@ -50,7 +55,7 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="transform scale-90 md:scale-100 origin-left transition-transform">
-            <Logo light={!isScrolled} />
+            <Logo light={isTransparent} />
           </div>
 
           {/* Desktop navigation */}
@@ -59,7 +64,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-serif text-lg font-medium transition-colors hover:text-sand-500 relative group/link ${isScrolled ? 'text-sage-800' : 'text-stone-100 drop-shadow-md'
+                className={`font-serif text-lg font-medium transition-colors hover:text-sand-500 relative group/link ${!isTransparent ? 'text-sage-800' : 'text-stone-100 drop-shadow-md'
                   }`}
               >
                 {link.label}
@@ -68,7 +73,7 @@ export function Header() {
             ))}
             <Link
               href="/book"
-              className={`btn px-8 py-3 rounded-full text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ${isScrolled
+              className={`btn px-8 py-3 rounded-full text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ${!isTransparent
                 ? 'bg-sage-700 text-white hover:bg-sage-800'
                 : 'bg-white text-sage-800 hover:bg-stone-100'
                 }`}
@@ -80,7 +85,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-sage-800 hover:bg-stone-100' : 'text-white hover:bg-white/10'
+            className={`lg:hidden p-2 rounded-lg transition-colors ${!isTransparent ? 'text-sage-800 hover:bg-stone-100' : 'text-white hover:bg-white/10'
               }`}
             aria-label="Toggle menu"
           >

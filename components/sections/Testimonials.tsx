@@ -1,4 +1,8 @@
-import { Star, Quote } from 'lucide-react'
+'use client'
+
+import { useState, useRef } from 'react'
+import { Star, Quote, Play, Pause } from 'lucide-react'
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
 
 const testimonials = [
   {
@@ -28,61 +32,129 @@ const testimonials = [
 ]
 
 export function Testimonials() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
   return (
-    <section id="testimonials" className="section-padding bg-cream-50">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block px-4 py-2 rounded-full bg-forest-50 text-forest-600 font-semibold text-sm mb-4">
-            Testimonials
+    <section id="testimonials" className="section-padding bg-stone-900 text-cream-50 relative overflow-hidden">
+      {/* Very subtle background light leak to match the premium vibe */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-sand-900/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="container-custom relative z-10">
+        {/* Header matching screenshot exactly */}
+        <FadeIn className="max-w-3xl mx-auto text-center mb-16">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sand-400 font-semibold text-xs tracking-widest uppercase mb-6 shadow-sm">
+            Hear from Alan
           </div>
-          <h2 className="text-display-md md:text-display-lg text-cream-900 mb-6">
-            Stories of <span className="text-gradient">Hope and Help</span>
+
+          <h2 className="text-display-md md:text-5xl lg:text-6xl font-serif mb-8 leading-tight">
+            <span className="text-stone-50 drop-shadow-sm block">Real Stories.</span>
+            <span className="text-sand-400 drop-shadow-sm block">Real Families.</span>
           </h2>
-          <p className="text-xl text-cream-600">
-            Real families we've had the privilege of serving in the Oklahoma City area.
+
+          <p className="text-lg md:text-xl text-stone-200 font-light max-w-2xl mx-auto leading-relaxed">
+            Alan shares how Heritage Home Solutions has helped Oklahoma City families navigate some of life's most difficult transitions — with care, honesty, and results.
           </p>
-        </div>
+        </FadeIn>
+
+        {/* Featured Video Story - Custom UI mimic */}
+        <FadeIn className="max-w-5xl mx-auto mb-24">
+          <div
+            className="group relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black border border-white/10 ring-1 ring-black/5 cursor-pointer"
+            onClick={togglePlay}
+          >
+            <video
+              ref={videoRef}
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+              title="Client Story 0218"
+              onEnded={() => setIsPlaying(false)}
+            >
+              <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4" type="video/mp4" />
+            </video>
+
+            {/* Custom Overlay (Only shown when paused) */}
+            <div className={`absolute inset-0 transition-opacity duration-300 flex flex-col justify-between p-6 ${isPlaying ? 'opacity-0' : 'opacity-100 bg-black/40 backdrop-blur-[2px]'}`}>
+
+              {/* Top Left Watermark */}
+              <div className="text-white/60 font-medium text-sm tracking-widest drop-shadow-md">
+                HERITAGE HOME SOLUTIONS
+              </div>
+
+              {/* Big Center Play Button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-sand-500 flex items-center justify-center shadow-xl transform transition-transform duration-300 group-hover:scale-105 group-hover:bg-sand-400">
+                  <Play className="text-stone-900 ml-1" size={36} fill="currentColor" />
+                </div>
+              </div>
+
+              {/* Fake Bottom Progress Bar line for styling */}
+              <div className="w-full flex justify-center pb-2">
+                <div className="h-1 w-12 rounded-full bg-white/30" />
+              </div>
+            </div>
+
+            {/* Minimal Pause button overlay when playing & hovering */}
+            <div className={`absolute inset-0 transition-opacity duration-300 flex items-center justify-center ${isPlaying ? 'opacity-0 group-hover:opacity-100 bg-black/20' : 'hidden'}`}>
+              <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                <Pause className="text-white" size={32} />
+              </div>
+            </div>
+
+          </div>
+        </FadeIn>
 
         {/* Testimonials grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="card p-8 space-y-6 relative">
+            <StaggerItem key={index} className="card p-8 space-y-6 relative hover:-translate-y-1 transition-transform duration-300 bg-white/5 border border-white/10 backdrop-blur-sm">
               {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-10">
-                <Quote size={48} className="text-forest-600" />
+              <div className="absolute top-6 right-6 opacity-20">
+                <Quote size={48} className="text-sand-600" />
               </div>
 
               {/* Rating */}
               <div className="flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-gold-500 text-gold-500" />
+                  <Star key={i} size={18} className="fill-sand-400 text-sand-400" />
                 ))}
               </div>
 
               {/* Testimonial text */}
-              <p className="text-cream-700 leading-relaxed relative z-10">
+              <p className="text-stone-300 leading-relaxed relative z-10 font-light">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-cream-200">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-forest-200 to-forest-300 flex items-center justify-center text-forest-700 font-bold text-lg">
+              <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sand-500 to-sand-600 flex items-center justify-center text-stone-900 font-bold text-lg shadow-inner">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="font-bold text-cream-900">{testimonial.name}</div>
-                  <div className="text-sm text-cream-600">{testimonial.role}</div>
-                  <div className="text-xs text-cream-500">{testimonial.location}</div>
+                  <div className="font-bold text-stone-100">{testimonial.name}</div>
+                  <div className="text-sm text-sand-400">{testimonial.role}</div>
+                  <div className="text-xs text-stone-400">{testimonial.location}</div>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Note about testimonials */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-cream-500 italic">
+          <p className="text-sm text-stone-400/80 italic font-light">
             * These are placeholder testimonials. Real testimonials will be added after video shoot.
           </p>
         </div>
@@ -90,3 +162,5 @@ export function Testimonials() {
     </section>
   )
 }
+
+

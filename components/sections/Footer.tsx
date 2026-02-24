@@ -17,10 +17,10 @@ export function Footer() {
               </div>
               <div>
                 <div className="font-bold text-lg leading-tight">Heritage Home</div>
-                <div className="text-sm text-cream-400">Solutions</div>
+                <div className="text-sm text-cream-200">Solutions</div>
               </div>
             </div>
-            <p className="text-cream-400 text-sm leading-relaxed">
+            <p className="text-cream-200 text-sm leading-relaxed">
               Providing compassionate, faith-based real estate solutions for seniors and distressed homeowners in the Oklahoma City area.
             </p>
             <div className="flex gap-4">
@@ -37,18 +37,18 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-cream-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-cream-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#process" className="text-cream-400 hover:text-white transition-colors">Our Process</a></li>
-              <li><a href="#testimonials" className="text-cream-400 hover:text-white transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="text-cream-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-cream-200 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#services" className="text-cream-200 hover:text-white transition-colors">Services</a></li>
+              <li><a href="#process" className="text-cream-200 hover:text-white transition-colors">Our Process</a></li>
+              <li><a href="#testimonials" className="text-cream-200 hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href="#contact" className="text-cream-200 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
             <h3 className="font-bold text-lg mb-4">Our Services</h3>
-            <ul className="space-y-3 text-cream-400">
+            <ul className="space-y-3 text-cream-200">
               <li>Senior Housing Transitions</li>
               <li>Probate & Estate Sales</li>
               <li>Foreclosure Assistance</li>
@@ -65,18 +65,18 @@ export function Footer() {
                 <Phone size={18} className="text-forest-400 mt-1 flex-shrink-0" />
                 <div>
                   <div className="text-white font-medium">(555) 123-4567</div>
-                  <div className="text-cream-400 text-sm">Mon-Fri 8am-6pm</div>
+                  <div className="text-cream-200 text-sm">Mon-Fri 8am-6pm</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-forest-400 mt-1 flex-shrink-0" />
-                <a href="mailto:alan@heritagehomesolutions.com" className="text-cream-400 hover:text-white transition-colors">
+                <a href="mailto:alan@heritagehomesolutions.com" className="text-cream-200 hover:text-white transition-colors">
                   alan@heritagehomesolutions.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-forest-400 mt-1 flex-shrink-0" />
-                <div className="text-cream-400 text-sm">
+                <div className="text-cream-200 text-sm">
                   Serving Oklahoma City<br />& 30-mile radius
                 </div>
               </li>
@@ -86,7 +86,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-cream-800">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream-400">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream-200">
             <p>© {currentYear} Heritage Home Solutions. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
