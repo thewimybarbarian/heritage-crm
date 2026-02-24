@@ -1,8 +1,21 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { Star, Quote, Play, Pause } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { Star, Quote, Play, Pause, ChevronLeft, ChevronRight } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
+
+const carouselVideos = [
+  {
+    id: "hero-intro",
+    src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4",
+    title: "Heritage Home Solutions Introduction"
+  },
+  {
+    id: "client-story-0218",
+    src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4",
+    title: "Client Story 0218"
+  }
+]
 
 const testimonials = [
   {
@@ -33,7 +46,27 @@ const testimonials = [
 
 export function Testimonials() {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [shouldAutoPlay, setShouldAutoPlay] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  const activeVideo = carouselVideos[currentVideoIndex]
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load()
+      if (shouldAutoPlay) {
+        setTimeout(() => {
+          if (videoRef.current) {
+            videoRef.current.play().catch(() => setIsPlaying(false))
+            setIsPlaying(true)
+          }
+        }, 50)
+      } else {
+        setIsPlaying(false)
+      }
+    }
+  }, [currentVideoIndex, shouldAutoPlay])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -44,6 +77,33 @@ export function Testimonials() {
       }
       setIsPlaying(!isPlaying)
     }
+  }
+
+  const handleVideoEnd = () => {
+    if (currentVideoIndex < carouselVideos.length - 1) {
+      setCurrentVideoIndex(prev => prev + 1)
+      setShouldAutoPlay(true)
+    } else {
+      setCurrentVideoIndex(0)
+      setShouldAutoPlay(false)
+    }
+  }
+
+  const handleSelectVideo = (index: number) => {
+    setCurrentVideoIndex(index)
+    setShouldAutoPlay(true)
+  }
+
+  const handlePrevious = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentVideoIndex(prev => prev === 0 ? carouselVideos.length - 1 : prev - 1)
+    setShouldAutoPlay(true)
+  }
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setCurrentVideoIndex(prev => prev === carouselVideos.length - 1 ? 0 : prev + 1)
+    setShouldAutoPlay(true)
   }
 
   return (
@@ -71,7 +131,7 @@ export function Testimonials() {
         {/* Featured Video Story - Custom UI mimic */}
         <FadeIn className="max-w-5xl mx-auto mb-24">
           <div
-            className="group relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black border border-white/10 ring-1 ring-black/5 cursor-pointer"
+            className="group relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black border border-white/10 ring-1 ring-black/5 cursor-pointer mb-6"
             onClick={togglePlay}
           >
             <video
@@ -79,10 +139,10 @@ export function Testimonials() {
               playsInline
               preload="metadata"
               className="w-full h-full object-cover"
-              title="Client Story 0218"
-              onEnded={() => setIsPlaying(false)}
+              title={activeVideo.title}
+              onEnded={handleVideoEnd}
             >
-              <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4" type="video/mp4" />
+              <source src={activeVideo.src} type="video/mp4" />
             </video>
 
             {/* Custom Overlay (Only shown when paused) */}
@@ -113,6 +173,46 @@ export function Testimonials() {
               </div>
             </div>
 
+            {/* Carousel Skip Controls */}
+            <div className={`absolute inset-y-0 left-0 flex items-center px-4 transition-opacity duration-300 z-20 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+              <button
+                onClick={handlePrevious}
+                className="p-3 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm transition-all text-white border border-white/10 hover:scale-110"
+              >
+                <ChevronLeft size={28} />
+              </button>
+            </div>
+
+            <div className={`absolute inset-y-0 right-0 flex items-center px-4 transition-opacity duration-300 z-20 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+              <button
+                onClick={handleNext}
+                className="p-3 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm transition-all text-white border border-white/10 hover:scale-110"
+              >
+                <ChevronRight size={28} />
+              </button>
+            </div>
+
+          </div>
+
+          {/* Video Thumbnails Array */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {carouselVideos.map((video, idx) => (
+              <button
+                key={video.id}
+                onClick={() => handleSelectVideo(idx)}
+                className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 ${currentVideoIndex === idx ? 'border-sand-500 shadow-lg shadow-sand-500/20 scale-105' : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'}`}
+              >
+                <video className="w-full h-full object-cover" preload="metadata">
+                  <source src={video.src} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <Play className={`w-8 h-8 ${currentVideoIndex === idx ? 'text-sand-500' : 'text-white/70'}`} fill="currentColor" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-white text-xs font-medium truncate text-left">{video.title}</p>
+                </div>
+              </button>
+            ))}
           </div>
         </FadeIn>
 
