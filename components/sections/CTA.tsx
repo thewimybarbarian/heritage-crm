@@ -18,9 +18,9 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:+1234567890" className="btn btn-accent text-lg px-8 py-4 group">
-              <Phone className="mr-2" size={20} />
-              Call (555) 123-4567
+            <a href="tel:+14052051246" className="btn btn-accent text-lg px-8 py-4 group">
+              <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
+              Call (405) 205-1246
             </a>
             <a href="#contact" className="btn bg-cream-50/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-cream-50/20 text-lg px-8 py-4 group">
               Send a Message

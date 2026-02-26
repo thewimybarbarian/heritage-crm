@@ -40,8 +40,8 @@ export function Header() {
         <div className="container-custom h-full flex items-center justify-between text-sm tracking-wide">
           <span className="font-medium italic">Putting Families First Since 2024</span>
           <div className="flex items-center gap-6">
-            <a href="tel:+15551234567" className="hover:text-sand-300 transition-colors flex items-center gap-2">
-              <Phone size={14} /> (555) 123-4567
+            <a href="tel:+14052051246" className="hover:text-sand-300 transition-colors flex items-center gap-2">
+              <Phone size={14} /> (405) 205-1246
             </a>
             <a href="mailto:help@heritagehomesolutions.com" className="hover:text-sand-300 transition-colors flex items-center gap-2">
               <Mail size={14} /> help@heritagehomesolutions.com
@@ -121,8 +121,8 @@ export function Header() {
             <div className="mt-12 p-6 bg-stone-100 rounded-2xl text-center">
               <p className="text-stone-600 mb-4 font-serif italic">"Compassion in every step."</p>
               <div className="flex flex-col gap-4 text-sage-800">
-                <a href="tel:+15551234567" className="flex items-center justify-center gap-3 font-medium text-lg">
-                  <Phone size={20} className="text-sand-600" /> (555) 123-4567
+                <a href="tel:+14052051246" className="flex items-center justify-center gap-3 font-medium text-lg">
+                  <Phone size={20} className="text-sand-600" /> (405) 205-1246
                 </a>
               </div>
             </div>

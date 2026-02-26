@@ -28,7 +28,7 @@ export default function BookPage() {
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
                         <Phone className="w-10 h-10 text-sand-500 mx-auto mb-4" />
                         <h3 className="text-xl font-bold text-sage-800 mb-2">Call Us Directly</h3>
-                        <a href="tel:5551234567" className="text-lg text-sage-600 block hover:text-sand-600 font-medium">(555) 123-4567</a>
+                        <a href="tel:4052051246" className="text-lg text-sage-600 block hover:text-sand-600 font-medium">(405) 205-1246</a>
                     </div>
 
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">

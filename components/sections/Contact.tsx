@@ -88,8 +88,8 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-cream-900 mb-1">Phone</div>
-                    <a href="tel:+1234567890" className="text-forest-600 hover:text-forest-700 transition-colors">
-                      (555) 123-4567
+                    <a href="tel:+14052051246" className="text-forest-600 hover:text-forest-700 transition-colors">
+                      (405) 205-1246
                     </a>
                     <div className="text-sm text-cream-800 mt-1">Mon-Fri 8am-6pm</div>
                   </div>
@@ -190,7 +190,7 @@ export function Contact() {
                     type="tel"
                     {...register('phone')}
                     className="input"
-                    placeholder="(555) 123-4567"
+                    placeholder="(405) 205-1246"
                   />
                   {errors.phone && (
                     <p className="text-red-600 text-sm mt-1">{errors.phone.message}</p>
