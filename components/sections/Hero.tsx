@@ -46,15 +46,13 @@ export function Hero() {
         <div className="absolute inset-0 bg-stone-900/70 z-10" />
         <video
           ref={bgVideoRef}
+          src="https://videos.pexels.com/video-files/7578552/7578552-hd_1920_1080_30fps.mp4"
           autoPlay
           loop
           muted
           playsInline
           className={`w-full h-full object-cover transition-opacity duration-1000 ${isTheatreMode ? 'opacity-10' : 'opacity-40'}`}
-        >
-          {/* Aerial view of suburban neighborhood - fits Oklahoma real estate vibe */}
-          <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1920_1080_30fps.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
 
       {/* Decorative Glow */}
@@ -120,6 +118,8 @@ export function Hero() {
               <div className={`group relative w-full h-full shadow-2xl transition-all duration-700 overflow-hidden bg-black/50 ${isTheatreMode ? 'rounded-2xl shadow-black/80 ring-1 ring-white/20 scale-105' : 'rounded-full shadow-sand-900/50 ring-4 ring-sand-500/30'}`}>
                 <video
                   ref={videoRef}
+                  src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4#t=0.001"
+                  preload="metadata"
                   autoPlay
                   loop
                   muted={isMuted}
@@ -131,9 +131,7 @@ export function Hero() {
                     }
                   }}
                   className={`w-full h-full object-cover transition-transform duration-700 ${isTheatreMode ? 'scale-100' : 'group-hover:scale-105'}`}
-                >
-                  <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4#t=0.001" type="video/mp4" />
-                </video>
+                />
 
                 {/* Inner shadow/overlay for better blending */}
                 <div className={`absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] pointer-events-none transition-opacity duration-500 ${isTheatreMode ? 'opacity-0' : 'opacity-100 rounded-full'}`} />

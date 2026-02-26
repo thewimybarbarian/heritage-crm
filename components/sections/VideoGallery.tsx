@@ -49,6 +49,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
         <div className="group relative aspect-video rounded-xl overflow-hidden shadow-xl bg-black border border-stone-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <video
                 ref={videoRef}
+                src={video.src}
                 playsInline
                 controls={isPlaying}
                 preload="metadata"
@@ -56,9 +57,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
                 title={video.title}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
-            >
-                <source src={video.src} type="video/mp4" />
-            </video>
+            />
 
             {/* Custom Overlay (Only shown before playing) */}
             {!isPlaying && (

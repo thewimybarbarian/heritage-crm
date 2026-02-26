@@ -73,6 +73,7 @@ export function Testimonials() {
           >
             <video
               ref={videoRef}
+              src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4#t=0.001"
               playsInline
               controls={isPlaying}
               preload="metadata"
@@ -80,9 +81,7 @@ export function Testimonials() {
               title="Client Story 0218"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
-            >
-              <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4#t=0.001" type="video/mp4" />
-            </video>
+            />
 
             {/* Custom Overlay (Only shown before playing) */}
             {!isPlaying && (

@@ -82,14 +82,14 @@ export function PhoneVideos() {
                                 <div className="relative w-full h-full rounded-[2.8rem] sm:rounded-[3rem] overflow-hidden bg-black z-20 cursor-pointer group" onClick={togglePlay}>
                                     <video
                                         ref={videoRef}
+                                        src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226%20(1)(2).mp4#t=0.001"
+                                        preload="metadata"
                                         playsInline
                                         loop
                                         className="w-full h-full object-cover scale-[1.02] transform"
                                         onPlay={() => setIsPlaying(true)}
                                         onPause={() => setIsPlaying(false)}
-                                    >
-                                        <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226%20(1)(2).mp4#t=0.001" type="video/mp4" />
-                                    </video>
+                                    />
 
                                     {/* Overlay gradient for contrast on text */}
                                     <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none transition-opacity duration-500 ${isPlaying ? 'opacity-0' : 'opacity-100'}`} />
