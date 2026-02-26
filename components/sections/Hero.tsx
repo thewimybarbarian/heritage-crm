@@ -6,11 +6,6 @@ import Link from 'next/link'
 import { StaggerContainer, StaggerItem } from '@/components/FadeIn'
 
 export function Hero() {
-  const playlist = [
-    "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0219%20(1).mp4#t=0.001",
-    "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4#t=0.001"
-  ]
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
   const bgVideoRef = useRef<HTMLVideoElement>(null)
@@ -142,18 +137,10 @@ export function Hero() {
                 <video
                   ref={videoRef}
                   autoPlay
+                  loop
                   muted={isMuted}
                   playsInline
                   controls={isTheatreMode}
-                  onEnded={() => {
-                    setCurrentVideoIndex((prev) => (prev + 1) % playlist.length)
-                    // Ensure it keeps playing after the source changes
-                    setTimeout(() => {
-                      if (videoRef.current) {
-                        videoRef.current.play()
-                      }
-                    }, 50)
-                  }}
                   onVolumeChange={() => {
                     if (videoRef.current) {
                       setIsMuted(videoRef.current.muted)
@@ -161,7 +148,7 @@ export function Hero() {
                   }}
                   className={`w-full h-full object-cover transition-transform duration-700 ${isTheatreMode ? 'scale-100' : 'group-hover:scale-105'}`}
                 >
-                  <source src={playlist[currentVideoIndex]} type="video/mp4" />
+                  <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4#t=0.001" type="video/mp4" />
                 </video>
 
                 {/* Inner shadow/overlay for better blending */}

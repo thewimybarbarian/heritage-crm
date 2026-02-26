@@ -2,9 +2,16 @@
 
 import { useState, useRef } from 'react'
 import { Play } from 'lucide-react'
+import Link from 'next/link'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
 
 const videos = [
+    {
+        id: "intro",
+        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4#t=0.001",
+        title: "Why Heritage Home Solutions?",
+        tag: "Our Mission"
+    },
     {
         id: "v1",
         src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4#t=0.001",
@@ -108,9 +115,9 @@ export function VideoGallery() {
                 </StaggerContainer>
 
                 <FadeIn className="mt-16 text-center">
-                    <button className="btn btn-primary bg-stone-900 text-white hover:bg-stone-800 rounded-full px-8 py-3 transition-colors shadow-lg hover:shadow-xl">
+                    <Link href="/videos" className="btn btn-primary bg-stone-900 text-white hover:bg-stone-800 rounded-full px-8 py-3 transition-colors shadow-lg hover:shadow-xl inline-block">
                         View All Videos
-                    </button>
+                    </Link>
                 </FadeIn>
             </div>
         </section>
