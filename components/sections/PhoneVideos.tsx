@@ -87,7 +87,7 @@ export function PhoneVideos() {
                                     onPlay={() => setIsPlaying(true)}
                                     onPause={() => setIsPlaying(false)}
                                 >
-                                    <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226.mp4#t=0.001" type="video/mp4" />
+                                    <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226%20(1)(2).mp4#t=0.001" type="video/mp4" />
                                 </video>
 
                                 {/* Overlay gradient for contrast on text */}
