@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { VideoGallery } from '@/components/sections/VideoGallery'
+import { PhoneVideos } from '@/components/sections/PhoneVideos'
 import Link from 'next/link'
 import { ArrowRight, ShieldCheck, HeartHandshake, Clock, MessageCircle, MapPin } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
@@ -96,6 +97,8 @@ export default function Home() {
       </section>
 
       <Testimonials />
+
+      <PhoneVideos />
 
       <VideoGallery />
 
