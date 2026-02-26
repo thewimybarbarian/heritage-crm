@@ -65,42 +65,44 @@ export function PhoneVideos() {
                     {/* Right: iPhone Frame */}
                     <FadeIn direction="up" className="order-1 lg:order-2 flex justify-center lg:justify-end">
                         <div className="relative mx-auto w-[280px] sm:w-[320px] aspect-[9/19.5]">
-                            {/* The Phone Hardware Frame */}
-                            <div className="absolute inset-0 rounded-[3rem] shadow-[-20px_20px_60px_rgba(0,0,0,0.2)] border-[8px] sm:border-[12px] border-stone-800 ring-1 ring-stone-700/50 z-20 pointer-events-none">
+                            {/* Side Buttons (behind the phone body) */}
+                            <div className="absolute top-24 -left-1 sm:-left-1.5 w-1.5 h-12 bg-stone-600 rounded-l-md z-0" />
+                            <div className="absolute top-40 -left-1 sm:-left-1.5 w-1.5 h-12 bg-stone-600 rounded-l-md z-0" />
+                            <div className="absolute top-32 -right-1 sm:-right-1.5 w-1.5 h-16 bg-stone-600 rounded-r-md z-0" />
+
+                            {/* The Phone Hardware Body */}
+                            <div className="absolute inset-0 bg-stone-800 rounded-[3.2rem] sm:rounded-[3.5rem] shadow-[-20px_20px_60px_rgba(0,0,0,0.2)] p-2 sm:p-3 ring-1 ring-stone-700/50 z-10 flex flex-col">
+
                                 {/* The Notch / Dynamic Island */}
-                                <div className="absolute top-2 sm:top-3 left-1/2 -translate-x-1/2 w-1/3 sm:w-28 h-6 sm:h-7 bg-black rounded-full z-30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] flex items-center justify-end px-3">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a2a] border border-[#2a2a4a] shadow-inner" />
+                                <div className="absolute top-4 sm:top-5 left-1/2 -translate-x-1/2 w-1/3 sm:w-28 h-6 sm:h-7 bg-black rounded-full z-30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] flex items-center justify-end px-3 pointer-events-none">
+                                    <div className="w-2 h-2 rounded-full bg-[#0a0a2a] border border-[#2a2a4a] shadow-inner" />
                                 </div>
-                                {/* Side Buttons */}
-                                <div className="absolute top-24 -left-[14px] w-1 h-12 bg-stone-700 rounded-l-md" />
-                                <div className="absolute top-40 -left-[14px] w-1 h-12 bg-stone-700 rounded-l-md" />
-                                <div className="absolute top-32 -right-[14px] w-1 h-16 bg-stone-700 rounded-r-md" />
-                            </div>
 
-                            {/* The Screen / Video Player */}
-                            <div className="relative w-full h-full rounded-[2.5rem] sm:rounded-[2.2rem] overflow-hidden bg-black z-10 cursor-pointer group" onClick={togglePlay}>
-                                <video
-                                    ref={videoRef}
-                                    playsInline
-                                    loop
-                                    className="w-full h-full object-cover scale-[1.02] transform"
-                                    onPlay={() => setIsPlaying(true)}
-                                    onPause={() => setIsPlaying(false)}
-                                >
-                                    <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226%20(1)(2).mp4#t=0.001" type="video/mp4" />
-                                </video>
+                                {/* The Screen / Video Player */}
+                                <div className="relative w-full h-full rounded-[2.8rem] sm:rounded-[3rem] overflow-hidden bg-black z-20 cursor-pointer group" onClick={togglePlay}>
+                                    <video
+                                        ref={videoRef}
+                                        playsInline
+                                        loop
+                                        className="w-full h-full object-cover scale-[1.02] transform"
+                                        onPlay={() => setIsPlaying(true)}
+                                        onPause={() => setIsPlaying(false)}
+                                    >
+                                        <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0226%20(1)(2).mp4#t=0.001" type="video/mp4" />
+                                    </video>
 
-                                {/* Overlay gradient for contrast on text */}
-                                <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none transition-opacity duration-500 ${isPlaying ? 'opacity-0' : 'opacity-100'}`} />
+                                    {/* Overlay gradient for contrast on text */}
+                                    <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none transition-opacity duration-500 ${isPlaying ? 'opacity-0' : 'opacity-100'}`} />
 
-                                {/* Play Button Overlay */}
-                                {!isPlaying && (
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-20">
-                                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.3)] transform transition-transform duration-300 group-hover:scale-110 group-hover:bg-sand-500 border border-white/30 group-hover:border-transparent mb-4">
-                                            <Play className="text-white group-hover:text-stone-900 ml-1 sm:ml-2 transition-colors" size={32} fill="currentColor" />
+                                    {/* Play Button Overlay */}
+                                    {!isPlaying && (
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-30 pointer-events-none">
+                                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.3)] transform transition-transform duration-300 group-hover:scale-110 group-hover:bg-sand-500 border border-white/30 group-hover:border-transparent mb-4 pointer-events-auto">
+                                                <Play className="text-white group-hover:text-stone-900 ml-1 sm:ml-2 transition-colors" size={32} fill="currentColor" />
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </FadeIn>
