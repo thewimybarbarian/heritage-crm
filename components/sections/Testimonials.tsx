@@ -57,12 +57,12 @@ export function Testimonials() {
           </div>
 
           <h2 className="text-display-md md:text-5xl lg:text-6xl font-serif mb-8 leading-tight">
-            <span className="text-stone-50 drop-shadow-sm block">Real Stories.</span>
-            <span className="text-sand-400 drop-shadow-sm block">Real Families.</span>
+            <span className="text-stone-50 drop-shadow-sm block">Welcome to</span>
+            <span className="text-sand-400 drop-shadow-sm block">Heritage Home Solutions</span>
           </h2>
 
           <p className="text-lg md:text-xl text-stone-200 font-light max-w-2xl mx-auto leading-relaxed">
-            Alan shares how Heritage Home Solutions has helped Oklahoma City families navigate some of life's most difficult transitions — with care, honesty, and results.
+            Alan shares how our team helps Oklahoma City families navigate some of life's most difficult transitions — with care, honesty, and results.
           </p>
         </FadeIn>
 
@@ -81,7 +81,7 @@ export function Testimonials() {
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             >
-              <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4" type="video/mp4" />
+              <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4#t=0.001" type="video/mp4" />
             </video>
 
             {/* Custom Overlay (Only shown before playing) */}

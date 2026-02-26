@@ -7,25 +7,19 @@ import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
 const videos = [
     {
         id: "v1",
-        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/Alan-site-intro.mp4",
-        title: "Why Heritage Home Solutions?",
-        tag: "Our Mission"
-    },
-    {
-        id: "v2",
-        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4",
+        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0218(1).mp4#t=0.001",
         title: "Client Story: The Smith Family",
         tag: "Real Stories"
     },
     {
-        id: "v3",
-        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4",
+        id: "v2",
+        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4#t=0.001",
         title: "Navigating Probate Sales",
         tag: "Education"
     },
     {
-        id: "v4",
-        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0219%20(1).mp4",
+        id: "v3",
+        src: "https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0219%20(1).mp4#t=0.001",
         title: "Helping Seniors Downsize",
         tag: "Services"
     }
