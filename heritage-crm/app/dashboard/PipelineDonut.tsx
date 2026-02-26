@@ -9,7 +9,7 @@ export default function PipelineDonut({ data, total }: { data: Segment[]; total:
 
     return (
         <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-6 transition-colors">
-            <h2 className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-4">Pipeline Breakdown</h2>
+            <h2 className="text-sm font-medium text-stone-700 dark:text-stone-200 mb-4">Pipeline Breakdown</h2>
             <div className="flex items-center gap-6">
                 <div className="relative w-40 h-40 flex-shrink-0">
                     <ResponsiveContainer width="100%" height="100%">
@@ -39,7 +39,7 @@ export default function PipelineDonut({ data, total }: { data: Segment[]; total:
                     {/* Center label */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                         <span className="text-2xl font-bold text-stone-900 dark:text-stone-100">{total}</span>
-                        <span className="text-xs text-stone-400 dark:text-stone-500">total</span>
+                        <span className="text-xs text-stone-700 dark:text-stone-300">total</span>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@ export default function PipelineDonut({ data, total }: { data: Segment[]; total:
                         <div key={item.name} className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                                 <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
-                                <span className="text-sm text-stone-600 dark:text-stone-400">{item.name}</span>
+                                <span className="text-sm text-stone-800 dark:text-stone-200">{item.name}</span>
                             </div>
                             <span className="text-sm font-semibold text-stone-900 dark:text-stone-100">{item.value}</span>
                         </div>

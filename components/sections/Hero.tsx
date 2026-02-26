@@ -1,13 +1,24 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { ArrowRight, Phone, Heart, Users, Volume2, VolumeX } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { ArrowRight, Phone, Heart, Users, Volume2, VolumeX, Play } from 'lucide-react'
 import Link from 'next/link'
 import { StaggerContainer, StaggerItem } from '@/components/FadeIn'
 
 export function Hero() {
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const bgVideoRef = useRef<HTMLVideoElement>(null)
+
+  // Theatre mode is active when the user unmutes the video
+  const isTheatreMode = !isMuted
+
+  // Slow down the background video
+  useEffect(() => {
+    if (bgVideoRef.current) {
+      bgVideoRef.current.playbackRate = 0.6
+    }
+  }, [])
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -18,15 +29,22 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-stone-900">
+
+      {/* Theatre Mode Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black/90 z-40 transition-opacity duration-700 pointer-events-none ${isTheatreMode ? 'opacity-100' : 'opacity-0'}`}
+      />
+
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-stone-900/70 z-10" />
         <video
+          ref={bgVideoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-40"
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${isTheatreMode ? 'opacity-10' : 'opacity-40'}`}
         >
           {/* Aerial view of suburban neighborhood - fits Oklahoma real estate vibe */}
           <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1920_1080_30fps.mp4" type="video/mp4" />
@@ -34,14 +52,14 @@ export function Hero() {
       </div>
 
       {/* Decorative Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-sand-900/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
+      <div className={`absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-sand-900/20 rounded-full blur-[120px] pointer-events-none transition-opacity duration-700 ${isTheatreMode ? 'opacity-0' : 'opacity-100 z-[1]'}`} />
 
       {/* Content */}
-      <StaggerContainer className="container-custom relative z-20 pt-32 pb-20">
+      <StaggerContainer className={`container-custom relative pt-32 pb-20 transition-all duration-700 ${isTheatreMode ? 'z-50' : 'z-20'}`}>
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
 
           {/* Left Side: Content */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1">
+          <div className={`max-w-xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1 transition-opacity duration-500 ${isTheatreMode ? 'opacity-20 pointer-events-none grayscale' : 'opacity-100'}`}>
             {/* Trust Badge */}
             <StaggerItem>
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-stone-100 mb-8 animate-fade-in shadow-xl">

@@ -42,7 +42,7 @@ export default function FilterTabs({ counts, total }: Props) {
                         }`}
                     >
                         {tab.label}
-                        <span className={`text-xs rounded-full px-1.5 py-0.5 ${isActive ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-500'}`}>
+                        <span className={`text-xs rounded-full px-1.5 py-0.5 ${isActive ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-700'}`}>
                             {count}
                         </span>
                     </button>

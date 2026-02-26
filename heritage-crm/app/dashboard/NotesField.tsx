@@ -41,10 +41,10 @@ export default function NotesField({ leadId, initialNotes }: { leadId: string; i
             disabled={isPending}
             className="flex items-start gap-1 mt-1 text-left group w-full"
         >
-            <span className={`text-xs ${value ? 'text-stone-500' : 'text-stone-300 italic'} group-hover:text-stone-700 transition-colors leading-snug`}>
+            <span className={`text-xs ${value ? 'text-stone-700' : 'text-stone-300 italic'} group-hover:text-stone-700 transition-colors leading-snug`}>
                 {isPending ? 'Saving...' : (value || 'Add notes...')}
             </span>
-            <Pencil size={10} className="text-stone-300 group-hover:text-stone-500 mt-0.5 flex-shrink-0 transition-colors" />
+            <Pencil size={10} className="text-stone-300 group-hover:text-stone-700 mt-0.5 flex-shrink-0 transition-colors" />
         </button>
     )
 }

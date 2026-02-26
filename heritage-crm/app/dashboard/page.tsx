@@ -70,7 +70,7 @@ function StatCard({ label, value, accent }: { label: string; value: number; acce
             {accent && (
                 <div className={`absolute top-0 left-0 right-0 h-1 ${bar[accent]}`} />
             )}
-            <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">{label}</p>
+            <p className="text-sm text-stone-700 dark:text-stone-200 mt-1">{label}</p>
             <p className="text-4xl font-bold text-stone-900 dark:text-stone-100 mt-2">{value}</p>
         </div>
     )

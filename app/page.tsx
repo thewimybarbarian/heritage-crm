@@ -1,5 +1,6 @@
 import { Hero } from '@/components/sections/Hero'
 import { Testimonials } from '@/components/sections/Testimonials'
+import { VideoGallery } from '@/components/sections/VideoGallery'
 import Link from 'next/link'
 import { ArrowRight, ShieldCheck, HeartHandshake, Clock, MessageCircle, MapPin } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
@@ -95,6 +96,8 @@ export default function Home() {
       </section>
 
       <Testimonials />
+
+      <VideoGallery />
 
       {/* Final CTA Strip */}
       <section className="py-24 bg-sage-900 text-white text-center">

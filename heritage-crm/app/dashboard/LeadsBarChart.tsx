@@ -9,7 +9,7 @@ export default function LeadsBarChart({ data }: { data: DataPoint[] }) {
 
     return (
         <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-6 transition-colors">
-            <h2 className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-4">Leads — Last 30 Days</h2>
+            <h2 className="text-sm font-medium text-stone-700 dark:text-stone-200 mb-4">Leads — Last 30 Days</h2>
             <div className="h-44">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} barCategoryGap="30%">
@@ -42,7 +42,7 @@ export default function LeadsBarChart({ data }: { data: DataPoint[] }) {
                 </ResponsiveContainer>
             </div>
             {!hasData && (
-                <p className="text-center text-xs text-stone-400 -mt-2">No leads in the last 30 days</p>
+                <p className="text-center text-xs text-stone-600 -mt-2">No leads in the last 30 days</p>
             )}
         </div>
     )

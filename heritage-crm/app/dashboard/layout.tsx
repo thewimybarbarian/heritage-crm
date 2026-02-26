@@ -20,7 +20,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
                 </div>
                 <SidebarNav />
                 <div className="p-4 border-t border-stone-100 dark:border-stone-800">
-                    <p className="text-xs text-stone-400 dark:text-stone-500 mb-3 truncate">{user.email}</p>
+                    <p className="text-xs text-stone-700 dark:text-stone-300 mb-3 truncate">{user.email}</p>
                     <LogoutButton />
                 </div>
             </aside>

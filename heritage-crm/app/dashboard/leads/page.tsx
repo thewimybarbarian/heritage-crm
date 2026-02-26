@@ -52,7 +52,7 @@ export default async function LeadsPage({
         <div className="p-8">
             <div className="flex items-center justify-between mb-6">
                 <h1 className="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100">Leads</h1>
-                <span className="text-sm text-stone-500 dark:text-stone-400">{leads?.length ?? 0} shown</span>
+                <span className="text-sm text-stone-700 dark:text-stone-200">{leads?.length ?? 0} shown</span>
             </div>
 
             <div className="mb-6">
@@ -62,7 +62,7 @@ export default async function LeadsPage({
             </div>
 
             {!leads || leads.length === 0 ? (
-                <div className="rounded-2xl border-2 border-dashed border-stone-300 dark:border-stone-700 bg-stone-50/50 dark:bg-stone-900/50 h-64 flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 gap-2">
+                <div className="rounded-2xl border-2 border-dashed border-stone-300 dark:border-stone-700 bg-stone-50/50 dark:bg-stone-900/50 h-64 flex flex-col items-center justify-center text-stone-700 dark:text-stone-300 gap-2">
                     <p className="text-lg font-serif">No leads here</p>
                     <p className="text-sm">
                         {activeStatus === 'all' ? 'Leads submitted from the website will appear here.' : `No leads with status "${activeStatus}".`}
@@ -73,12 +73,12 @@ export default async function LeadsPage({
                     <table className="min-w-full divide-y divide-stone-100 dark:divide-stone-800">
                         <thead className="bg-stone-50 dark:bg-stone-800/50">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Name</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Situation</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Status</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Notes</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Actions</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Name</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Situation</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Notes</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Actions</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-stone-700 dark:text-stone-200 uppercase tracking-wider">Date</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-stone-100 dark:divide-stone-800">
@@ -86,20 +86,20 @@ export default async function LeadsPage({
                                 <tr key={lead.id} className="hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                                     <td className="px-6 py-4">
                                         <div className="font-medium text-stone-900 dark:text-stone-100">{lead.name}</div>
-                                        {lead.address && <div className="text-xs text-stone-400 dark:text-stone-500 mt-0.5">{lead.address}</div>}
-                                        <div className="text-xs text-stone-400 dark:text-stone-500 mt-0.5">{lead.email}</div>
+                                        {lead.address && <div className="text-xs text-stone-700 dark:text-stone-300 mt-0.5">{lead.address}</div>}
+                                        <div className="text-xs text-stone-700 dark:text-stone-300 mt-0.5">{lead.email}</div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-stone-700 dark:text-stone-300 max-w-[160px]">
                                         {lead.situation}
                                         {lead.message && (
-                                            <div className="text-xs text-stone-400 dark:text-stone-500 mt-1 truncate max-w-[140px]" title={lead.message}>
+                                            <div className="text-xs text-stone-700 dark:text-stone-300 mt-1 truncate max-w-[140px]" title={lead.message}>
                                                 {lead.message}
                                             </div>
                                         )}
                                     </td>
                                     <td className="px-6 py-4">
                                         <StatusBadge leadId={lead.id} currentStatus={lead.status} />
-                                        <div className="text-xs text-stone-400 dark:text-stone-500 mt-1">click to advance</div>
+                                        <div className="text-xs text-stone-700 dark:text-stone-300 mt-1">click to advance</div>
                                     </td>
                                     <td className="px-6 py-4 max-w-[180px]">
                                         <NotesField leadId={lead.id} initialNotes={lead.notes} />
@@ -129,7 +129,7 @@ export default async function LeadsPage({
                                             </a>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-stone-500 dark:text-stone-400 whitespace-nowrap">
+                                    <td className="px-6 py-4 text-sm text-stone-700 dark:text-stone-200 whitespace-nowrap">
                                         {new Date(lead.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                                     </td>
                                 </tr>
