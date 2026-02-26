@@ -66,7 +66,7 @@ export function PhoneVideos() {
                     <FadeIn direction="up" className="order-1 lg:order-2 flex justify-center lg:justify-end">
                         <div className="relative mx-auto w-[280px] sm:w-[320px] aspect-[9/19.5]">
                             {/* The Phone Hardware Frame */}
-                            <div className="absolute inset-0 bg-stone-900 rounded-[3rem] shadow-[-20px_20px_60px_rgba(0,0,0,0.2)] border-[8px] sm:border-[12px] border-stone-800 p-1 ring-1 ring-stone-700/50 z-20 pointer-events-none">
+                            <div className="absolute inset-0 rounded-[3rem] shadow-[-20px_20px_60px_rgba(0,0,0,0.2)] border-[8px] sm:border-[12px] border-stone-800 ring-1 ring-stone-700/50 z-20 pointer-events-none">
                                 {/* The Notch / Dynamic Island */}
                                 <div className="absolute top-2 sm:top-3 left-1/2 -translate-x-1/2 w-1/3 sm:w-28 h-6 sm:h-7 bg-black rounded-full z-30 shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] flex items-center justify-end px-3">
                                     <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a2a] border border-[#2a2a4a] shadow-inner" />
