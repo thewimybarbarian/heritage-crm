@@ -83,8 +83,7 @@ export function Hero() {
 
             <StaggerItem>
               <p className="text-xl md:text-2xl text-stone-100 mb-12 leading-relaxed drop-shadow-md font-light">
-                "I don't know what to do." "I just want it gone." <br />
-                <span className="font-semibold text-white">We hear you, and we are here to handle everything.</span>
+                We hear you, and we are here to handle everything.
               </p>
             </StaggerItem>
 
@@ -107,22 +106,7 @@ export function Hero() {
               </div>
             </StaggerItem>
 
-            <StaggerItem>
-              <div className="mt-16 flex flex-wrap items-center gap-6 text-stone-200 justify-center lg:justify-start">
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
-                  <div className="w-2.5 h-2.5 rounded-full bg-sand-500 shadow-[0_0_8px_rgba(212,161,69,0.8)]" />
-                  <span className="text-sm font-medium">Full Estate Cleanouts</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
-                  <div className="w-2.5 h-2.5 rounded-full bg-sand-500 shadow-[0_0_8px_rgba(212,161,69,0.8)]" />
-                  <span className="text-sm font-medium">Out-of-State Support</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
-                  <div className="w-2.5 h-2.5 rounded-full bg-sand-500 shadow-[0_0_8px_rgba(212,161,69,0.8)]" />
-                  <span className="text-sm font-medium">Elder Care Specialists</span>
-                </div>
-              </div>
-            </StaggerItem>
+            {/* Bullets removed to reduce text density */}
           </div>
 
           {/* Right Side: Circular Video */}
