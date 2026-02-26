@@ -123,41 +123,45 @@ export function Hero() {
           <StaggerItem className="relative order-1 lg:order-2">
             <div className="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] mx-auto lg:ml-auto">
               {/* Decorative Rings */}
-              <div className="absolute inset-[-4%] rounded-full border border-sand-500/20 animate-[spin_30s_linear_infinite]" />
-              <div className="absolute inset-[-8%] rounded-full border border-sand-500/10 animate-[spin_45s_linear_infinite_reverse]" />
+              <div className={`absolute inset-[-4%] rounded-full border border-sand-500/20 animate-[spin_30s_linear_infinite] transition-opacity duration-500 ${isTheatreMode ? 'opacity-0' : 'opacity-100'}`} />
+              <div className={`absolute inset-[-8%] rounded-full border border-sand-500/10 animate-[spin_45s_linear_infinite_reverse] transition-opacity duration-500 ${isTheatreMode ? 'opacity-0' : 'opacity-100'}`} />
 
               {/* Video Container */}
-              <div className="group relative w-full h-full rounded-full overflow-hidden shadow-2xl shadow-sand-900/50 ring-4 ring-sand-500/30">
+              <div className={`group relative w-full h-full shadow-2xl transition-all duration-700 overflow-hidden bg-black/50 ${isTheatreMode ? 'rounded-2xl shadow-black/80 ring-1 ring-white/20 scale-105' : 'rounded-full shadow-sand-900/50 ring-4 ring-sand-500/30'}`}>
                 <video
                   ref={videoRef}
                   autoPlay
                   loop
                   muted={isMuted}
                   playsInline
-                  className="w-full h-full object-cover scale-105"
+                  controls={isTheatreMode}
+                  onVolumeChange={() => {
+                    if (videoRef.current) {
+                      setIsMuted(videoRef.current.muted)
+                    }
+                  }}
+                  className={`w-full h-full object-cover transition-transform duration-700 ${isTheatreMode ? 'scale-100' : 'group-hover:scale-105'}`}
                 >
                   <source src="https://pub-dc89b5ded9904f60995a345d884e2aaa.r2.dev/0224(1).mp4" type="video/mp4" />
                 </video>
 
                 {/* Inner shadow/overlay for better blending */}
-                <div className="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] pointer-events-none" />
+                <div className={`absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.5)] pointer-events-none transition-opacity duration-500 ${isTheatreMode ? 'opacity-0' : 'opacity-100 rounded-full'}`} />
 
                 {/* Mute/Unmute Overlay Toggle */}
-                <button
-                  onClick={toggleMute}
-                  className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 hover:bg-black/40 transition-colors duration-300 z-10 opacity-0 group-hover:opacity-100"
-                >
-                  <div className="p-4 rounded-full bg-white/20 backdrop-blur-md mb-2 transform transition-transform duration-300 scale-90 group-hover:scale-100">
-                    {isMuted ? (
-                      <VolumeX className="text-white drop-shadow-md" size={32} />
-                    ) : (
+                {!isTheatreMode && (
+                  <button
+                    onClick={toggleMute}
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 hover:bg-black/40 transition-colors duration-300 z-10 opacity-0 group-hover:opacity-100"
+                  >
+                    <div className="p-4 rounded-full bg-white/20 backdrop-blur-md mb-2 transform transition-transform duration-300 scale-90 group-hover:scale-100">
                       <Volume2 className="text-white drop-shadow-md" size={32} />
-                    )}
-                  </div>
-                  <span className="text-white font-medium tracking-wide drop-shadow-md">
-                    {isMuted ? 'Click to Unmute' : 'Mute Video'}
-                  </span>
-                </button>
+                    </div>
+                    <span className="text-white font-medium tracking-wide drop-shadow-md">
+                      Click to Unmute
+                    </span>
+                  </button>
+                )}
               </div>
 
               {/* Decorative floating badge */}
