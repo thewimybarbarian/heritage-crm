@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { ArrowRight, Phone, Heart, Users, Volume2, VolumeX, Play } from 'lucide-react'
+import { ArrowRight, Phone, Heart, Users, Volume2, VolumeX, Play, X } from 'lucide-react'
 import Link from 'next/link'
 import { StaggerContainer, StaggerItem } from '@/components/FadeIn'
 
@@ -32,7 +32,13 @@ export function Hero() {
 
       {/* Theatre Mode Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/90 z-40 transition-opacity duration-700 pointer-events-none ${isTheatreMode ? 'opacity-100' : 'opacity-0'}`}
+        onClick={() => {
+          if (videoRef.current && !videoRef.current.muted) {
+            videoRef.current.muted = true
+            setIsMuted(true)
+          }
+        }}
+        className={`fixed inset-0 bg-black/90 z-40 transition-opacity duration-700 ${isTheatreMode ? 'opacity-100 cursor-pointer pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       />
 
       {/* Video Background */}
@@ -160,6 +166,23 @@ export function Hero() {
                     <span className="text-white font-medium tracking-wide drop-shadow-md">
                       Click to Unmute
                     </span>
+                  </button>
+                )}
+
+                {/* Close Theatre Mode Button */}
+                {isTheatreMode && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      if (videoRef.current) {
+                        videoRef.current.muted = true
+                        setIsMuted(true)
+                      }
+                    }}
+                    className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white backdrop-blur-md transition-all duration-300 hover:scale-110"
+                    title="Close Video"
+                  >
+                    <X size={20} />
                   </button>
                 )}
               </div>
