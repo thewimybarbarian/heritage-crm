@@ -25,7 +25,7 @@ export default function Home() {
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
               <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
               <p className="text-xl font-serif text-sage-800 italic mb-4">"I don't know what to do."</p>
-              <p className="text-stone-600 text-sm">Feeling paralyzed by the sheer volume of "stuff" and decisions involves.</p>
+              <p className="text-stone-600 text-sm">Feeling paralyzed by the sheer volume of "stuff" and decisions involved.</p>
             </StaggerItem>
 
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
@@ -37,7 +37,7 @@ export default function Home() {
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
               <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
               <p className="text-xl font-serif text-sage-800 italic mb-4">"Can you handle everything?"</p>
-              <p className="text-stone-600 text-sm">Needing a full-service partner who can coordiate estate sales, cleanouts, and closing.</p>
+              <p className="text-stone-600 text-sm">Needing a full-service partner who can coordinate estate sales, cleanouts, and closing.</p>
             </StaggerItem>
 
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
