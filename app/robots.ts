@@ -1,11 +1,12 @@
-import type { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
             userAgent: '*',
             allow: '/',
+            disallow: ['/admin', '/api/', '/crm'],
         },
-        sitemap: 'https://heritagehomesolutions.com/sitemap.xml',
+        sitemap: 'https://heritagehomesolutions.info/sitemap.xml',
     }
 }

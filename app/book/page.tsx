@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Book a Free Consultation | Heritage Home Solutions',
         description: 'No pressure, no obligation. Schedule a free consultation with Heritage Home Solutions today.',
-        url: 'https://heritagehomesolutions.com/book',
+        url: 'https://heritagehomesolutions.info/book',
     },
 }
 

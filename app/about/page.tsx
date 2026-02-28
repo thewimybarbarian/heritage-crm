@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'About Heritage Home Solutions',
         description: 'Faith-driven real estate solutions for Oklahoma City families. Learn about our story, values, and how we serve our community.',
-        url: 'https://heritagehomesolutions.com/about',
+        url: 'https://heritagehomesolutions.info/about',
     },
 }
 
