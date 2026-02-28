@@ -146,12 +146,6 @@ export function Testimonials() {
           ))}
         </StaggerContainer>
 
-        {/* Note about testimonials */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-stone-400/80 italic font-light">
-            * These are placeholder testimonials. Real testimonials will be added after video shoot.
-          </p>
-        </div>
       </div>
     </section>
   )
