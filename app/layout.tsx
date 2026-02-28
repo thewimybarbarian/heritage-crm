@@ -63,23 +63,38 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'RealEstateAgent',
+  '@type': ['RealEstateAgent', 'LocalBusiness'],
   name: 'Heritage Home Solutions',
-  description: 'Faith-based real estate solutions for seniors and distressed homeowners in the Oklahoma City metro area.',
+  description: 'Faith-based real estate solutions for seniors and distressed homeowners in the Oklahoma City metro area. We buy houses for cash, handle probate, estate sales, and foreclosure assistance.',
   url: 'https://heritagehomesolutions.info',
   telephone: '+14052051246',
-  email: 'help@heritagehomesolutions.com',
+  email: 'help@heritagehomesolutions.info',
+  image: 'https://heritagehomesolutions.info/og-image.jpg',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Oklahoma City',
+    addressRegion: 'OK',
+    addressCountry: 'US'
+  },
   founder: { '@type': 'Person', name: 'Alan Norton' },
   areaServed: [
     { '@type': 'City', name: 'Oklahoma City', sameAs: 'https://www.wikidata.org/wiki/Q33552' },
-    { '@type': 'City', name: 'Edmond' },
-    { '@type': 'City', name: 'Moore' },
-    { '@type': 'City', name: 'Norman' },
+    { '@type': 'City', name: 'Edmond', sameAs: 'https://www.wikidata.org/wiki/Q863110' },
+    { '@type': 'City', name: 'Moore', sameAs: 'https://www.wikidata.org/wiki/Q982736' },
+    { '@type': 'City', name: 'Norman', sameAs: 'https://www.wikidata.org/wiki/Q617182' },
     { '@type': 'City', name: 'Midwest City' },
     { '@type': 'City', name: 'Yukon' },
     { '@type': 'City', name: 'Mustang' },
   ],
-  openingHours: 'Mo-Fr 08:00-18:00',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '20:00'
+    }
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Real Estate Services',

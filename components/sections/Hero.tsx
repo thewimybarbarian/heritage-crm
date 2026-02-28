@@ -74,15 +74,15 @@ export function Hero() {
 
             <StaggerItem>
               <h1 className="heading-lg text-white mb-8 drop-shadow-lg leading-tight">
-                Struggling Alone with a<br className="hidden md:block" />
-                <span className="text-sand-200 italic font-serif">Family Home Transition?</span>
+                Sell Your Oklahoma City Home Fast During a<br className="hidden md:block" />
+                <span className="text-sand-200 italic font-serif">Family Home Transition</span>
               </h1>
             </StaggerItem>
 
             <StaggerItem>
-              <p className="text-xl md:text-2xl text-stone-100 mb-12 leading-relaxed drop-shadow-md font-light">
-                We hear you, and we are here to handle everything.
-              </p>
+              <h2 className="text-xl md:text-2xl text-stone-100 mb-12 leading-relaxed drop-shadow-md font-light">
+                We are local cash home buyers helping families navigate estate sales, probate, and downsizing. We handle everything from the cleanout to the closing.
+              </h2>
             </StaggerItem>
 
             <StaggerItem>

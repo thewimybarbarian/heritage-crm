@@ -40,10 +40,10 @@ export function Process() {
             Our Process
           </div>
           <h2 className="text-display-md md:text-display-lg text-cream-900 mb-6">
-            Simple, <span className="text-gradient">Transparent</span>, and Respectful
+            The Easiest Way to <span className="text-gradient">Sell a House in OKC</span>
           </h2>
           <p className="text-xl text-cream-800">
-            We've streamlined the process to make selling your home as easy and stress-free as possible.
+            We've streamlined the process to make selling your Oklahoma City home as easy and stress-free as possible.
           </p>
         </FadeIn>
 

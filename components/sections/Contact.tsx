@@ -67,7 +67,7 @@ export function Contact() {
             Get in Touch
           </div>
           <h2 className="text-display-md md:text-display-lg text-cream-900 mb-6">
-            Start Your <span className="text-gradient">Journey Today</span>
+            Contact Your Local OKC <span className="text-gradient">Cash Home Buyers</span>
           </h2>
           <p className="text-xl text-cream-800">
             Fill out the form below or give us a call. We're here to help and will respond within 24 hours.
