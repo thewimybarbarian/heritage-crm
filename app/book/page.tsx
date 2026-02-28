@@ -34,7 +34,7 @@ export default function BookPage() {
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
                         <Mail className="w-10 h-10 text-sand-500 mx-auto mb-4" />
                         <h3 className="text-xl font-bold text-sage-800 mb-2">Email Anytime</h3>
-                        <a href="mailto:help@heritagehomesolutions.com" className="text-lg text-sage-600 block hover:text-sand-600 font-medium">help@heritagehomesolutions.com</a>
+                        <a href="mailto:help@heritagehomesolutions.com" className="text-lg text-sage-600 block hover:text-sand-600 font-medium break-all">help@heritagehomesolutions.com</a>
                     </div>
 
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">

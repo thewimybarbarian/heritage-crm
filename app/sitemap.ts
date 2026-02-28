@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://heritagehomesolutions.info'
 
     // Add more dynamic routes here if there is a blog or dynamic pages
-    const routes = ['', '/about', '/privacy', '/terms'].map((route) => ({
+    const routes = ['', '/about', '/videos', '/book'].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
