@@ -59,6 +59,9 @@ export const metadata: Metadata = {
     description: 'Compassionate real estate solutions for seniors and distressed homeowners in Oklahoma City.',
     images: ['/og-image.jpg'],
   },
+  verification: {
+    google: '6GfnorEduqJTI-k1TcQxjXBus5Av-j57OtHKSFlQQKY',
+  },
 }
 
 const jsonLd = {
