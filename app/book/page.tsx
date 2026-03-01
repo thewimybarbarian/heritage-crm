@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Book a Free Consultation | Heritage Home Solutions',
-    description: 'Schedule your free, no-obligation consultation with Heritage Home Solutions. We help Oklahoma City homeowners navigate senior transitions, probate, and distressed sales.',
+    title: 'Book a Free Consultation | Heritage Home Solutions OKC',
+    description: 'Schedule your free, no-obligation consultation with Heritage Home Solutions. We help Oklahoma City homeowners navigate senior transitions, probate, and distressed sales. Call (405) 205-1246.',
+    alternates: {
+        canonical: 'https://heritagehomesolutions.info/book',
+    },
     openGraph: {
         title: 'Book a Free Consultation | Heritage Home Solutions',
         description: 'No pressure, no obligation. Schedule a free consultation with Heritage Home Solutions today.',

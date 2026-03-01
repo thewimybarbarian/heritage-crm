@@ -23,27 +23,27 @@ export default function Home() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
-              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
-              <p className="text-xl font-serif text-sage-800 italic mb-4">"I don't know what to do."</p>
-              <p className="text-stone-600 text-sm">Feeling paralyzed by the sheer volume of "stuff" and decisions involved.</p>
+              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10 pointer-events-none" />
+              <p className="text-xl font-serif text-sage-800 italic mb-4 pr-10 relative z-10">"I don't know what to do."</p>
+              <p className="text-stone-600 text-sm relative z-10">Feeling paralyzed by the sheer volume of "stuff" and decisions involved.</p>
             </StaggerItem>
 
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
-              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
-              <p className="text-xl font-serif text-sage-800 italic mb-4">"I just want it gone."</p>
-              <p className="text-stone-600 text-sm">Just wanting the burden lifted so you can focus on your family, not the house.</p>
+              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10 pointer-events-none" />
+              <p className="text-xl font-serif text-sage-800 italic mb-4 pr-10 relative z-10">"I just want it gone."</p>
+              <p className="text-stone-600 text-sm relative z-10">Just wanting the burden lifted so you can focus on your family, not the house.</p>
             </StaggerItem>
 
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
-              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
-              <p className="text-xl font-serif text-sage-800 italic mb-4">"Can you handle everything?"</p>
-              <p className="text-stone-600 text-sm">Needing a full-service partner who can coordinate estate sales, cleanouts, and closing.</p>
+              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10 pointer-events-none" />
+              <p className="text-xl font-serif text-sage-800 italic mb-4 pr-10 relative z-10">"Can you handle everything?"</p>
+              <p className="text-stone-600 text-sm relative z-10">Needing a full-service partner who can coordinate estate sales, cleanouts, and closing.</p>
             </StaggerItem>
 
             <StaggerItem className="bg-white p-8 rounded-xl shadow-md border-l-4 border-sand-500 relative hover:-translate-y-1 transition-transform duration-300">
-              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10" />
-              <p className="text-xl font-serif text-sage-800 italic mb-4">"I need someone I trust."</p>
-              <p className="text-stone-600 text-sm">Looking for integrity and transparency when handling your parents' most valuable asset.</p>
+              <MessageCircle className="absolute top-6 right-6 text-sand-200 w-10 h-10 pointer-events-none" />
+              <p className="text-xl font-serif text-sage-800 italic mb-4 pr-10 relative z-10">"I need someone I trust."</p>
+              <p className="text-stone-600 text-sm relative z-10">Looking for integrity and transparency when handling your parents' most valuable asset.</p>
             </StaggerItem>
           </StaggerContainer>
         </div>

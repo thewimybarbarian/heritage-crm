@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'About Us | Heritage Home Solutions',
-    description: 'Founded on faith and integrity, Heritage Home Solutions helps Oklahoma City families navigate senior housing transitions, probate sales, and foreclosure with compassion.',
+    title: 'About Us | Heritage Home Solutions OKC',
+    description: 'Founded on faith and integrity, Heritage Home Solutions helps Oklahoma City families navigate senior housing transitions, probate sales, and foreclosure with compassion. Meet Alan Norton.',
+    alternates: {
+        canonical: 'https://heritagehomesolutions.info/about',
+    },
     openGraph: {
         title: 'About Heritage Home Solutions',
         description: 'Faith-driven real estate solutions for Oklahoma City families. Learn about our story, values, and how we serve our community.',
@@ -36,7 +39,7 @@ export default function AboutPage() {
             <div className="bg-stone-100 py-16 text-center">
                 <h2 className="heading-md mb-6">Ready to see if we're a good fit?</h2>
                 <a href="/book" className="btn btn-primary px-10 py-4 text-lg">
-                    Schdule a Free Consultation
+                    Schedule a Free Consultation
                 </a>
             </div>
         </>
