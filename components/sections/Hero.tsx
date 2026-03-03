@@ -176,8 +176,8 @@ export function Hero() {
                     <Users className="text-sand-400" size={24} />
                   </div>
                   <div>
-                    <div className="text-white font-bold">1,000+</div>
-                    <div className="text-stone-400 text-sm">Families Helped</div>
+                    <div className="text-white font-bold">15+ Years</div>
+                    <div className="text-stone-400 text-sm">Local Experience</div>
                   </div>
                 </div>
               </div>
