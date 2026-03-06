@@ -4,8 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
-
-const GA_MEASUREMENT_ID = 'G-8YEXFGT96R'
+import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 
 const inter = Inter({
   subsets: ['latin'],

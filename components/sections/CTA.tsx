@@ -1,4 +1,7 @@
+'use client'
+
 import { Phone, ArrowRight } from 'lucide-react'
+import { trackPhoneClick, trackCTAClick } from '@/lib/gtag'
 
 export function CTA() {
   return (
@@ -18,11 +21,19 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:+14052051246" className="btn btn-accent text-lg px-8 py-4 group">
+            <a
+              href="tel:+14052051246"
+              onClick={() => trackPhoneClick('cta_section')}
+              className="btn btn-accent text-lg px-8 py-4 group"
+            >
               <Phone className="mr-2 group-hover:rotate-12 transition-transform" />
               Call (405) 205-1246
             </a>
-            <a href="#contact" className="btn bg-cream-50/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-cream-50/20 text-lg px-8 py-4 group">
+            <a
+              href="#contact"
+              onClick={() => trackCTAClick('send_message', 'cta_section')}
+              className="btn bg-cream-50/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-cream-50/20 text-lg px-8 py-4 group"
+            >
               Send a Message
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </a>

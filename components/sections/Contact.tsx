@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { Phone, Mail, MapPin, Loader2, CheckCircle2 } from 'lucide-react'
 import { submitLead } from '@/app/actions/submit-lead'
 import { FadeIn } from '@/components/FadeIn'
+import { trackLeadSubmission, trackPhoneClick } from '@/lib/gtag'
 
 const leadSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -45,6 +46,7 @@ export function Contact() {
       const result = await submitLead(data)
 
       if (result.success) {
+        trackLeadSubmission(data.situation, 'website_form')
         setIsSuccess(true)
         reset()
         setTimeout(() => setIsSuccess(false), 5000)
@@ -88,7 +90,11 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-cream-900 mb-1">Phone</div>
-                    <a href="tel:+14052051246" className="text-forest-600 hover:text-forest-700 transition-colors">
+                    <a
+                      href="tel:+14052051246"
+                      onClick={() => trackPhoneClick('contact_section')}
+                      className="text-forest-600 hover:text-forest-700 transition-colors"
+                    >
                       (405) 205-1246
                     </a>
                     <div className="text-sm text-cream-800 mt-1">Mon-Fri 8am-6pm</div>
