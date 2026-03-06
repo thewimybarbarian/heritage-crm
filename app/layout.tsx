@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
+
+const GA_MEASUREMENT_ID = 'G-8YEXFGT96R'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -118,6 +121,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+      </head>
       <body className="font-sans antialiased bg-white text-neutral-900">
         <script
           type="application/ld+json"
