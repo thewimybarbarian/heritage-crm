@@ -9,8 +9,8 @@ export default async function PipelinePage() {
         .order('created_at', { ascending: false })
 
     return (
-        <div className="p-8 h-full flex flex-col">
-            <h1 className="text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 mb-6">Pipeline</h1>
+        <div className="p-4 sm:p-6 lg:p-8 h-full flex flex-col">
+            <h1 className="text-xl sm:text-2xl font-bold font-serif text-stone-900 dark:text-stone-100 mb-4 sm:mb-6">Pipeline</h1>
             <KanbanBoard initialLeads={leads ?? []} />
         </div>
     )

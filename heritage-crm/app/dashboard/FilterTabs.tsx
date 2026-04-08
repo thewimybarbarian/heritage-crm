@@ -35,7 +35,7 @@ export default function FilterTabs({ counts, total }: Props) {
                     <button
                         key={tab.value}
                         onClick={() => handleTab(tab.value)}
-                        className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                        className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors flex items-center gap-1 sm:gap-1.5 ${
                             isActive
                                 ? 'bg-stone-800 text-white'
                                 : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'

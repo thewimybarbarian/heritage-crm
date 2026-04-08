@@ -46,11 +46,11 @@ export default function KanbanBoard({ initialLeads }: { initialLeads: Lead[] }) 
 
     return (
         <DragDropContext onDragEnd={onDragEnd}>
-            <div className="flex gap-4 flex-1 overflow-x-auto pb-4">
+            <div className="flex flex-col md:flex-row gap-4 flex-1 md:overflow-x-auto pb-4">
                 {COLUMNS.map(col => {
                     const colLeads = leads.filter(l => l.status === col.id)
                     return (
-                        <div key={col.id} className="flex flex-col w-72 flex-shrink-0">
+                        <div key={col.id} className="flex flex-col w-full md:w-72 md:flex-shrink-0">
                             {/* Column header */}
                             <div className="flex items-center gap-2 mb-3">
                                 <div className={`w-2.5 h-2.5 rounded-full ${col.header}`} />

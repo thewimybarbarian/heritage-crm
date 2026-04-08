@@ -8,10 +8,10 @@ export default function PipelineDonut({ data, total }: { data: Segment[]; total:
     const hasData = data.some(d => d.value > 0)
 
     return (
-        <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-6 transition-colors">
+        <div className="bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 shadow-sm p-4 sm:p-6 transition-colors">
             <h2 className="text-sm font-medium text-stone-700 dark:text-stone-200 mb-4">Pipeline Breakdown</h2>
-            <div className="flex items-center gap-6">
-                <div className="relative w-40 h-40 flex-shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
