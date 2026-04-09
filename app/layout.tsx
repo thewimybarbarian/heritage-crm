@@ -73,7 +73,7 @@ const jsonLd = {
   description: 'Faith-based real estate solutions for seniors and distressed homeowners in the Oklahoma City metro area. We buy houses for cash, handle probate, estate sales, and foreclosure assistance.',
   url: 'https://heritagehomesolutions.info',
   telephone: '+14052051246',
-  email: 'help@heritagehomesolutions.info',
+  email: 'alan@heritagehomesolutions.info',
   image: 'https://heritagehomesolutions.info/og-image.jpg',
   priceRange: '$$',
   address: {

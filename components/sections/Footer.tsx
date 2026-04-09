@@ -64,8 +64,8 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-sand-400 mt-1 flex-shrink-0" />
-                <a href="mailto:help@heritagehomesolutions.com" className="text-stone-200 hover:text-sand-400 transition-colors font-medium">
-                  help@heritagehomesolutions.com
+                <a href="mailto:alan@heritagehomesolutions.info" className="text-stone-200 hover:text-sand-400 transition-colors font-medium">
+                  alan@heritagehomesolutions.info
                 </a>
               </li>
               <li className="flex items-start gap-3">

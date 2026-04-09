@@ -16,7 +16,7 @@ type LeadData = z.infer<typeof leadSchema>
 
 const CRM_API_URL = process.env.CRM_API_URL || 'http://localhost:3001'
 const CRM_API_KEY = process.env.CRM_API_KEY || ''
-const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'alan@heritagehomesolutions.com'
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'alan@heritagehomesolutions.info'
 
 export async function submitLead(data: LeadData) {
   try {
@@ -50,7 +50,7 @@ export async function submitLead(data: LeadData) {
       if (!process.env.RESEND_API_KEY) throw new Error('No RESEND_API_KEY')
       const resend = new Resend(process.env.RESEND_API_KEY)
       await resend.emails.send({
-        from: 'Heritage Home Solutions <notifications@heritagehomesolutions.com>',
+        from: 'Heritage Home Solutions <notifications@heritagehomesolutions.info>',
         to: NOTIFICATION_EMAIL,
         subject: `New Lead: ${validatedData.name}`,
         html: `

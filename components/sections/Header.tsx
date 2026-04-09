@@ -44,8 +44,8 @@ export function Header() {
             <a href="tel:+14052051246" onClick={() => trackPhoneClick('header_topbar')} className="hover:text-sand-300 transition-colors flex items-center gap-2">
               <Phone size={14} /> (405) 205-1246
             </a>
-            <a href="mailto:help@heritagehomesolutions.com" className="hover:text-sand-300 transition-colors flex items-center gap-2">
-              <Mail size={14} /> help@heritagehomesolutions.com
+            <a href="mailto:alan@heritagehomesolutions.info" className="hover:text-sand-300 transition-colors flex items-center gap-2">
+              <Mail size={14} /> alan@heritagehomesolutions.info
             </a>
           </div>
         </div>
