@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/Hero'
+import { TrustBadges } from '@/components/sections/TrustBadges'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { VideoGallery } from '@/components/sections/VideoGallery'
 import { PhoneVideos } from '@/components/sections/PhoneVideos'
@@ -10,6 +11,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      <TrustBadges />
 
       {/* Voice of Customer / Empathy Section */}
       <section className="section-padding bg-stone-50">
