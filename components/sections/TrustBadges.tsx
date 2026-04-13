@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Users, Star, Building2, Shield } from 'lucide-react'
+import { Users, Building2, Shield, ExternalLink } from 'lucide-react'
 import { FadeIn } from '@/components/FadeIn'
 
 // ---- SVG logo components --------------------------------------------------
@@ -37,6 +37,8 @@ type Badge = {
     image?: { src: string; alt: string }
     svg?: React.ComponentType<{ className?: string }>
     icon?: React.ComponentType<{ size?: number; className?: string }>
+    // Optional external link — clicking the whole tile navigates here
+    href?: string
     // If true, the tile is rendered but signals to Alan that credentials need verification
     pending?: boolean
 }
@@ -46,6 +48,7 @@ const BADGES: Badge[] = [
         title: 'Bricktown Rotary',
         subtitle: 'Active Member, Rotary International',
         image: { src: '/bricktown-rotary-logo.png', alt: 'Bricktown Rotary Club' },
+        href: 'https://www.bricktownrotary.org/',
     },
     {
         title: 'OKC Mix & Mingle',
@@ -54,8 +57,9 @@ const BADGES: Badge[] = [
     },
     {
         title: 'Google Reviews',
-        subtitle: 'Read what families say about us',
+        subtitle: 'Read what OKC families say — click to view',
         svg: GoogleGLogo,
+        href: 'https://www.google.com/search?q=Heritage+Home+Solutions+Oklahoma+City+reviews',
     },
     {
         title: 'Equal Housing Opportunity',
@@ -99,10 +103,10 @@ export function TrustBadges() {
 }
 
 function BadgeCard({ badge }: { badge: Badge }) {
-    const { title, subtitle, image, svg: Svg, icon: Icon } = badge
+    const { title, subtitle, image, svg: Svg, icon: Icon, href } = badge
 
-    return (
-        <div className="flex items-center gap-4 p-5 rounded-xl bg-stone-50 border border-stone-100 hover:border-sand-300 hover:shadow-md transition-all duration-300">
+    const content = (
+        <>
             <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-white border border-stone-200 flex items-center justify-center overflow-hidden">
                 {image ? (
                     <Image
@@ -119,13 +123,32 @@ function BadgeCard({ badge }: { badge: Badge }) {
                 ) : null}
             </div>
             <div className="min-w-0 flex-1">
-                <div className="font-serif font-semibold text-sage-900 leading-tight text-sm sm:text-base">
+                <div className="font-serif font-semibold text-sage-900 leading-tight text-sm sm:text-base flex items-center gap-1.5">
                     {title}
+                    {href && <ExternalLink size={12} className="text-stone-400 flex-shrink-0" aria-hidden />}
                 </div>
                 <div className="text-xs sm:text-sm text-stone-600 mt-0.5 leading-snug">
                     {subtitle}
                 </div>
             </div>
-        </div>
+        </>
     )
+
+    const baseClasses = 'flex items-center gap-4 p-5 rounded-xl bg-stone-50 border border-stone-100 hover:border-sand-300 hover:shadow-md transition-all duration-300'
+
+    if (href) {
+        return (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={baseClasses}
+                aria-label={`${title} — opens in new tab`}
+            >
+                {content}
+            </a>
+        )
+    }
+
+    return <div className={baseClasses}>{content}</div>
 }
