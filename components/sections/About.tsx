@@ -48,8 +48,8 @@ export function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="text-forest-600 mt-1 flex-shrink-0" size={24} />
                 <div>
-                  <div className="font-semibold text-cream-900 mb-1">15+ Years Experience</div>
-                  <div className="text-cream-800 text-sm">Helping Oklahoma City families for over a decade</div>
+                  <div className="font-semibold text-cream-900 mb-1">20+ Years Experience</div>
+                  <div className="text-cream-800 text-sm">Helping Oklahoma City families for over two decades</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">

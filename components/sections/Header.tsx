@@ -39,7 +39,7 @@ export function Header() {
       {/* Top bar */}
       <div className={`hidden md:block transition-all duration-300 ${isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-10 bg-sage-800 text-stone-100'}`}>
         <div className="container-custom h-full flex items-center justify-between text-sm tracking-wide">
-          <span className="font-medium italic">Putting Families First Since 2024</span>
+          <span className="font-medium italic">Putting Families First for Over 20 Years</span>
           <div className="flex items-center gap-6">
             <a href="tel:+14052051246" onClick={() => trackPhoneClick('header_topbar')} className="hover:text-sand-300 transition-colors flex items-center gap-2">
               <Phone size={14} /> (405) 205-1246

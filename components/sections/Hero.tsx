@@ -176,7 +176,7 @@ export function Hero() {
                     <Users className="text-sand-400" size={24} />
                   </div>
                   <div>
-                    <div className="text-white font-bold">15+ Years</div>
+                    <div className="text-white font-bold">20+ Years</div>
                     <div className="text-stone-400 text-sm">Local Experience</div>
                   </div>
                 </div>
